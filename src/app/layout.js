@@ -1,5 +1,6 @@
 'use client'
 import "./globals.css";
+import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 import {Provider} from "react-redux";
 import store from "@/redux/store/store";
 import { Toaster } from 'react-hot-toast';
@@ -13,6 +14,11 @@ export default function RootLayout({ children }) {
         <Provider store={store}>
             <Toaster />
             <AppNavbar />
+            <ProgressBar
+                height="4px"
+                color="#06b6d4"
+                options={{ showSpinner: false }}
+            />
             {children}
         </Provider>
       </body>
